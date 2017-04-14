@@ -9,6 +9,6 @@ public class bbankController {
 	@RequestMapping("/")
 	public String showHome(){
 		System.out.println("From Controller");
-		return "default";
+		return "home";
 	}
 }

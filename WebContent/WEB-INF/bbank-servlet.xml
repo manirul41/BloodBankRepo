@@ -12,10 +12,16 @@
 		base-package="com.name.spring.web.controllers">
 	</context:component-scan>
 	<mvc:annotation-driven></mvc:annotation-driven>
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		id="JspsViewResolver">
-	<property name="prefix" value="/WEB-INF/template/"></property>
-	<property name="suffix" value=".jsp"></property>
+	
+	<bean id="tilesViewResolver"
+		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	<property name="definitions">
+		<list>
+			<value>/WEB-INF/layout/default.xml</value>
+		</list>
+	</property>
 	</bean>
 </beans>
